@@ -1,0 +1,21 @@
+{
+  "name": "jorgegutierrezbandera.github.io",
+  "version": "1.0.0",
+  "description": "Professional Profile of Jorge Augusto Gutiérrez Bandera - Full Stack Software Engineer",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "serve": "npx serve .",
+    "test": "node -e \"console.log('Validating data integrity...'); const { profileData } = require('./src/data/profileData.js'); console.log('Data valid:', profileData.identity.name);\""
+  },
+  "keywords": [
+    "portfolio",
+    "cv",
+    "fullstack",
+    "backend",
+    "engineer"
+  ],
+  "author": "Jorge Augusto Gutiérrez Bandera",
+  "license": "MIT"
+}

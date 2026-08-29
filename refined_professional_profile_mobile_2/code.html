@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jorge Gutiérrez - Full Stack Software Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;family=JetBrains+Mono:wght@500&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1c2d",
+                        "on-tertiary-container": "#545f73",
+                        "surface": "#0b1326",
+                        "secondary": "#b9c8de",
+                        "on-secondary-fixed-variant": "#39485a",
+                        "on-tertiary": "#263143",
+                        "tertiary-fixed": "#d8e3fb",
+                        "primary": "#dbfcff",
+                        "on-primary": "#00363a",
+                        "tertiary-container": "#cfdaf2",
+                        "secondary-container": "#39485a",
+                        "on-background": "#dae2fd",
+                        "slate-surface": "#1E293B",
+                        "secondary-fixed": "#d4e4fa",
+                        "inverse-primary": "#006970",
+                        "on-primary-container": "#006970",
+                        "surface-dim": "#0b1326",
+                        "surface-container": "#171f33",
+                        "terminal-bg": "#020617",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#060e20",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "inverse-on-surface": "#283044",
+                        "inverse-surface": "#dae2fd",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#002022",
+                        "secondary-fixed-dim": "#b9c8de",
+                        "border-muted": "#334155",
+                        "on-primary-fixed-variant": "#004f54",
+                        "surface-bright": "#31394d",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#233143",
+                        "on-surface": "#dae2fd",
+                        "electric-cyan": "#00F0FF",
+                        "surface-variant": "#2d3449",
+                        "primary-fixed": "#7df4ff",
+                        "outline": "#849495",
+                        "surface-container-low": "#131b2e",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "primary-container": "#00f0ff",
+                        "surface-container-high": "#222a3d",
+                        "on-surface-variant": "#b9cacb",
+                        "surface-container-highest": "#2d3449",
+                        "surface-tint": "#00dbe9",
+                        "on-secondary-container": "#a7b6cc",
+                        "outline-variant": "#3b494b",
+                        "primary-fixed-dim": "#00dbe9",
+                        "tertiary": "#f4f6ff",
+                        "on-tertiary-fixed": "#111c2d",
+                        "background": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "section-gap": "120px"
+                    },
+                    "fontFamily": {
+                        "code-label": ["JetBrains Mono"],
+                        "body-lg": ["Geist"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-md": ["Geist"],
+                        "button": ["Geist"]
+                    },
+                    "fontSize": {
+                        "code-label": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-grid-pattern {
+                background-image: 
+                    linear-gradient(to right, rgba(51, 65, 85, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(51, 65, 85, 0.1) 1px, transparent 1px);
+                background-size: 24px 24px;
+            }
+            .text-glow {
+                text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-terminal-bg text-on-surface font-body-md overflow-x-hidden antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-border-muted/30">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-gutter h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-electric-cyan" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface text-glow">J. GUTIÉRREZ</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="md:hidden text-electric-cyan">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<nav class="hidden md:flex gap-6">
+<a class="font-code-label text-code-label text-on-surface hover:text-electric-cyan transition-colors" href="#profile">Profile</a>
+<a class="font-code-label text-code-label text-on-surface hover:text-electric-cyan transition-colors" href="#experience">Experience</a>
+<a class="font-code-label text-code-label text-on-surface hover:text-electric-cyan transition-colors" href="#skills">Skills</a>
+</nav>
+<button class="font-button text-button text-electric-cyan border border-electric-cyan px-4 py-2 rounded font-bold hover:bg-electric-cyan hover:text-terminal-bg transition-colors hidden sm:block">
+                DOWNLOAD CV
+            </button>
+</div>
+</div>
+</header>
+<!-- Sticky Sub-Nav (Mobile) -->
+<div class="md:hidden fixed bottom-0 w-full bg-surface-container-high/90 backdrop-blur-md z-40 border-t border-border-muted overflow-x-auto">
+<div class="flex items-center gap-6 px-4 py-3 min-w-max">
+<a class="flex flex-col items-center text-electric-cyan" href="#home"><span class="material-symbols-outlined text-sm">home</span><span class="text-[10px] font-code-label">Home</span></a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#profile"><span class="material-symbols-outlined text-sm">person</span><span class="text-[10px] font-code-label">Profile</span></a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#experience"><span class="material-symbols-outlined text-sm">work</span><span class="text-[10px] font-code-label">Exp</span></a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#skills"><span class="material-symbols-outlined text-sm">code</span><span class="text-[10px] font-code-label">Skills</span></a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#journey"><span class="material-symbols-outlined text-sm">timeline</span><span class="text-[10px] font-code-label">Journey</span></a>
+</div>
+</div>
+<main class="pt-24 pb-32 md:pb-section-gap relative">
+<div class="absolute inset-0 bg-grid-pattern z-0 opacity-50 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10 flex flex-col gap-16 md:gap-24">
+<!-- Hero Section -->
+<section class="flex flex-col gap-6 md:gap-8 min-h-[70vh] justify-center md:items-start items-center text-center md:text-left mt-8" id="home">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface tracking-tighter mb-2">
+                        Jorge Gutiérrez
+                    </h1>
+<h2 class="font-headline-md text-headline-md text-electric-cyan font-bold mb-4 text-glow">
+                        Full Stack Software Engineer
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto md:mx-0">Versatile Software Engineer with a mastery of backend architecture and database systems, delivering scalable enterprise solutions across the full stack.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<a class="font-button text-button text-terminal-bg bg-electric-cyan px-8 py-4 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 w-full sm:w-auto" href="#experience">
+                        View Experience
+                        <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<div class="flex gap-4 w-full sm:w-auto justify-center">
+<a aria-label="LinkedIn" class="w-12 h-12 rounded-lg bg-surface-container border border-border-muted flex items-center justify-center text-on-surface hover:text-electric-cyan hover:border-electric-cyan transition-colors" href="#">
+<span class="font-code-label text-code-label font-bold">in</span>
+</a>
+<a aria-label="GitHub" class="w-12 h-12 rounded-lg bg-surface-container border border-border-muted flex items-center justify-center text-on-surface hover:text-electric-cyan hover:border-electric-cyan transition-colors" href="#">
+<span class="font-code-label text-code-label font-bold">gh</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Professional Snapshot -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-border-muted/30">
+<div class="flex flex-col items-center text-center p-4">
+<span class="text-3xl font-headline-md text-electric-cyan font-bold mb-1">12+</span>
+<span class="font-code-label text-on-surface-variant text-sm">Years Experience</span>
+</div>
+<div class="flex flex-col items-center text-center p-4">
+<span class="text-3xl font-headline-md text-electric-cyan font-bold mb-1">4+</span>
+<span class="font-code-label text-on-surface-variant text-sm">Years at TCS</span>
+</div>
+<div class="flex flex-col items-center text-center p-4">
+<span class="text-3xl font-headline-md text-electric-cyan font-bold mb-1">3</span>
+<span class="font-code-label text-on-surface-variant text-sm">Major Enterprise Clients</span>
+</div>
+<div class="flex flex-col items-center text-center p-4">
+<span class="text-3xl font-headline-md text-electric-cyan font-bold mb-1">100%</span>
+<span class="font-code-label text-on-surface-variant text-sm">Agile Delivery</span>
+</div>
+</section>
+<!-- Engineering Profile -->
+<section class="flex flex-col gap-8" id="profile">
+<h3 class="font-headline-md text-headline-md text-on-surface border-l-4 border-electric-cyan pl-4">Engineering Profile</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container border border-border-muted/50 p-6 rounded-xl hover:border-electric-cyan/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-electric-cyan text-2xl">dns</span>
+<h4 class="font-headline-md text-xl text-on-surface">Backend Master</h4>
+</div>
+<p class="text-body-md text-on-surface-variant">Deep expertise in C#, Java, Python, and Node.js. Designing robust APIs, microservices, and complex business logic layers that drive enterprise applications.</p>
+</div>
+<div class="bg-surface-container border border-border-muted/50 p-6 rounded-xl hover:border-electric-cyan/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-electric-cyan text-2xl">database</span>
+<h4 class="font-headline-md text-xl text-on-surface">Database Specialist</h4>
+</div>
+<p class="text-body-md text-on-surface-variant">Advanced data modeling, optimization, and management across diverse RDBMS (SQL Server, Oracle, DB2, Informix) and NoSQL environments.</p>
+</div>
+<div class="bg-surface-container border border-border-muted/50 p-6 rounded-xl hover:border-electric-cyan/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-electric-cyan text-2xl">web</span>
+<h4 class="font-headline-md text-xl text-on-surface">Frontend Capable</h4>
+</div>
+<p class="text-body-md text-on-surface-variant">Proficient in modern frontend frameworks (Angular, React, Vue) to deliver seamless, responsive user interfaces integrated with complex backends.</p>
+</div>
+<div class="bg-surface-container border border-border-muted/50 p-6 rounded-xl hover:border-electric-cyan/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-electric-cyan text-2xl">domain</span>
+<h4 class="font-headline-md text-xl text-on-surface">Enterprise Grade</h4>
+</div>
+<p class="text-body-md text-on-surface-variant">Proven track record in highly regulated environments (Banking, Finance), adhering to strict security, compliance, and performance standards.</p>
+</div>
+</div>
+</section>
+<!-- Career Journey -->
+<section class="flex flex-col gap-8" id="journey">
+<h3 class="font-headline-md text-headline-md text-on-surface border-l-4 border-electric-cyan pl-4">Career Journey</h3>
+<div class="relative pl-6 md:pl-8 border-l border-border-muted/50 ml-4 flex flex-col gap-8">
+<div class="relative">
+<div class="absolute -left-[35px] md:-left-[41px] bg-surface-container w-8 h-8 rounded-full border-2 border-border-muted flex items-center justify-center text-on-surface-variant font-code-label text-xs">01</div>
+<div class="font-bold text-on-surface text-lg">Systems Base</div>
+<div class="text-body-md text-on-surface-variant mt-1">Foundational experience in infrastructure, system administration, and technical support.</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[35px] md:-left-[41px] bg-surface-container w-8 h-8 rounded-full border-2 border-border-muted flex items-center justify-center text-on-surface-variant font-code-label text-xs">02</div>
+<div class="font-bold text-on-surface text-lg">Software Development</div>
+<div class="text-body-md text-on-surface-variant mt-1">Transitioned to application logic, mastering languages and frameworks to build functional software.</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[35px] md:-left-[41px] bg-surface-container w-8 h-8 rounded-full border-2 border-border-muted flex items-center justify-center text-on-surface-variant font-code-label text-xs">03</div>
+<div class="font-bold text-on-surface text-lg">Software Engineering</div>
+<div class="text-body-md text-on-surface-variant mt-1">Focused on scalable architecture, design patterns, and engineering robust, enterprise-grade systems.</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[35px] md:-left-[41px] bg-surface w-8 h-8 rounded-full border-2 border-electric-cyan flex items-center justify-center text-electric-cyan font-code-label text-xs shadow-[0_0_10px_rgba(0,240,255,0.3)]">04</div>
+<div class="font-bold text-electric-cyan text-lg">Full Stack Mastery</div>
+<div class="text-body-md text-on-surface-variant mt-1">Current state: Delivering end-to-end solutions, seamlessly integrating complex backends with modern frontends.</div>
+</div>
+</div>
+</section>
+<!-- Technical Stack -->
+<section class="flex flex-col gap-8" id="skills">
+<h3 class="font-headline-md text-headline-md text-on-surface border-l-4 border-electric-cyan pl-4">Technical Stack</h3>
+<div class="flex flex-col gap-6">
+<div>
+<h4 class="font-code-label text-sm text-on-surface-variant mb-3 uppercase tracking-wider">Languages &amp; Core</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">C# .NET</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Java</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Python</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">JavaScript/TypeScript</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">C/C++</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">PHP</span>
+</div>
+</div>
+<div>
+<h4 class="font-code-label text-sm text-on-surface-variant mb-3 uppercase tracking-wider">Backend &amp; Frameworks</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Node.js</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Spring Boot</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Express</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">REST APIs</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Microservices</span>
+</div>
+</div>
+<div>
+<h4 class="font-code-label text-sm text-on-surface-variant mb-3 uppercase tracking-wider">Database Systems</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container border border-electric-cyan/30 rounded text-sm text-electric-cyan">SQL Server</span>
+<span class="px-3 py-1 bg-surface-container border border-electric-cyan/30 rounded text-sm text-electric-cyan">Oracle</span>
+<span class="px-3 py-1 bg-surface-container border border-electric-cyan/30 rounded text-sm text-electric-cyan">MySQL / PostgreSQL</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">IBM DB2</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Informix</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">MongoDB / Redis</span>
+</div>
+</div>
+<div>
+<h4 class="font-code-label text-sm text-on-surface-variant mb-3 uppercase tracking-wider">Frontend</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Angular</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">React</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Vue.js</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">HTML5/CSS3</span>
+<span class="px-3 py-1 bg-surface-container border border-border-muted rounded text-sm text-on-surface">Tailwind / Bootstrap</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Experience -->
+<section class="flex flex-col gap-8" id="experience">
+<h3 class="font-headline-md text-headline-md text-on-surface border-l-4 border-electric-cyan pl-4">Professional Experience</h3>
+<div class="bg-surface-container-high border-2 border-electric-cyan/20 rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-electric-cyan/5 rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
+<div>
+<h4 class="font-headline-md text-2xl text-on-surface font-bold">Tata Consultancy Services (TCS)</h4>
+<p class="text-electric-cyan font-code-label">Full Stack Software Engineer • 4+ Years</p>
+</div>
+<span class="px-3 py-1 bg-surface border border-electric-cyan/30 rounded text-sm text-electric-cyan self-start">Current</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">Leading development efforts across major enterprise clients, focusing on scalable architecture, cloud integration, and agile delivery.</p>
+<div class="flex flex-col gap-4">
+<div class="bg-surface border border-border-muted p-4 rounded-lg">
+<h5 class="font-bold text-on-surface mb-1">Banistmo Project</h5>
+<p class="text-sm text-on-surface-variant">Architecture and development of financial systems, focusing on secure transactions and API integrations.</p>
+</div>
+<div class="bg-surface border border-border-muted p-4 rounded-lg">
+<h5 class="font-bold text-on-surface mb-1">Tuya Project</h5>
+<p class="text-sm text-on-surface-variant">Full stack development for retail financial services, enhancing user portals and backend processing.</p>
+</div>
+<div class="bg-surface border border-border-muted p-4 rounded-lg">
+<h5 class="font-bold text-on-surface mb-1">SUMMA Project</h5>
+<p class="text-sm text-on-surface-variant">Enterprise resource management solution development, utilizing modern web frameworks and robust databases.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Details Sections -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Professional Development -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-xl text-on-surface border-l-4 border-electric-cyan pl-4">Learning Patterns</h3>
+<div class="bg-surface-container border border-border-muted/50 p-5 rounded-xl h-full">
+<ul class="space-y-3 text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-electric-cyan text-[20px] mt-0.5">check_circle</span>
+<span>Continuous adaptation to new tech stacks.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-electric-cyan text-[20px] mt-0.5">check_circle</span>
+<span>Proactive upskilling in Cloud &amp; DevOps.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-electric-cyan text-[20px] mt-0.5">check_circle</span>
+<span>Mentorship and knowledge sharing within teams.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Recognition -->
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-xl text-on-surface border-l-4 border-electric-cyan pl-4">Recognition</h3>
+<div class="bg-surface-container border border-border-muted/50 p-5 rounded-xl h-full">
+<div class="italic text-body-md text-on-surface-variant relative pl-6">
+<span class="material-symbols-outlined absolute left-0 top-0 text-border-muted text-xl">format_quote</span>
+                "Jorge's ability to navigate complex backend architectures while delivering intuitive frontend experiences has been critical to our project's success. His database expertise is unmatched."
+                <div class="mt-4 not-italic font-code-label text-sm text-electric-cyan">- TCS Project Leadership</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-12 border-t border-border-muted/20 mb-[60px] md:mb-0">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-container-max mx-auto px-margin-mobile">
+<div class="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
+<span class="font-headline-md text-headline-md font-bold text-on-surface text-glow">J. GUTIÉRREZ</span>
+<p class="font-body-md text-sm text-on-surface-variant">
+                    B.S. Systems Engineering • Specialist in Software Dev
+                 </p>
+<p class="font-body-md text-xs text-border-muted mt-2">
+                    © 2024 Jorge Gutiérrez • Architecting Scalable Systems
+                 </p>
+</div>
+<div class="flex flex-col gap-4 items-center md:items-end">
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-code-label text-code-label text-on-surface-variant hover:text-electric-cyan transition-colors focus:outline-none focus:ring-1 focus:ring-electric-cyan rounded px-1" href="#">LinkedIn</a>
+<a class="font-code-label text-code-label text-on-surface-variant hover:text-electric-cyan transition-colors focus:outline-none focus:ring-1 focus:ring-electric-cyan rounded px-1" href="#">GitHub</a>
+<a class="font-code-label text-code-label text-on-surface-variant hover:text-electric-cyan transition-colors focus:outline-none focus:ring-1 focus:ring-electric-cyan rounded px-1" href="mailto:contact@example.com">Email Me</a>
+</nav>
+<a class="font-code-label text-sm text-electric-cyan border border-electric-cyan/30 px-4 py-2 rounded hover:bg-electric-cyan/10 transition-colors" href="mailto:contact@example.com">
+        jorge.gutierrez@example.com
+    </a>
+</div>
+</div>
+</footer>
+</body></html>
