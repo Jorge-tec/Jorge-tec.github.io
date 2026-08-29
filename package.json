@@ -1,5 +1,5 @@
 {
-  "name": "jorgegutierrezbandera.github.io",
+  "name": "jorge-tec.github.io",
   "version": "1.0.0",
   "description": "Professional Profile of Jorge Augusto Gutiérrez Bandera - Full Stack Software Engineer",
   "main": "index.html",
@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "npx serve -l 3000 .",
     "serve": "npx serve .",
-    "test": "node -e \"console.log('Validating data integrity...'); const { profileData } = require('./src/data/profileData.js'); console.log('Data valid:', profileData.identity.name);\""
+    "build:pdf": "node scripts/generatePdf.js",
+    "build": "npm run build:pdf",
+    "test": "node -e \"import('./src/data/profileData.js').then(m => console.log('Data valid for:', m.profileData.identity.fullName));\""
   },
   "keywords": [
     "portfolio",
@@ -17,5 +19,8 @@
     "engineer"
   ],
   "author": "Jorge Augusto Gutiérrez Bandera",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer": "^25.9.0"
+  }
 }

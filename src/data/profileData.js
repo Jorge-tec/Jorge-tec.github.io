@@ -19,7 +19,7 @@ export const profileData = {
     links: {
       linkedin: "https://www.linkedin.com/in/jorge-augusto-gutierrez-bandera-2a6722120/",
       github: "https://github.com/Jorge-tec",
-      cvFile: "#"
+      cvFile: "./assets/Jorge-Gutierrez-CV.pdf"
     }
   },
 

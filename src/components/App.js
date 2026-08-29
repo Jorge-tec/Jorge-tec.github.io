@@ -22,8 +22,8 @@ export function renderApp() {
           <a class="nav-link" href="#experience">Experience</a>
           <a class="nav-link" href="#recognitions">Recognitions</a>
           <a class="nav-link" href="#contact">Contact</a>
-          <a class="btn-ghost" href="${profileData.identity.links.linkedin}" target="_blank" rel="noopener noreferrer" style="padding: 8px 16px;">
-            LINKEDIN
+          <a class="btn-ghost" href="${profileData.identity.links.cvFile}" download="Jorge-Gutierrez-CV.pdf" style="padding: 8px 16px; color: var(--cyan-primary); border-color: var(--cyan-primary);">
+            DOWNLOAD CV
           </a>
         </nav>
       </div>
@@ -61,11 +61,11 @@ export function renderApp() {
                 View Experience
                 <span class="material-symbols-outlined" style="font-size: 18px;">arrow_downward</span>
               </a>
-              <a href="${profileData.identity.links.linkedin}" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-                LinkedIn Profile
+              <a href="${profileData.identity.links.cvFile}" download="Jorge-Gutierrez-CV.pdf" class="btn-ghost" style="color: var(--cyan-primary); border-color: var(--cyan-primary);">
+                Download CV (PDF)
               </a>
-              <a href="${profileData.identity.links.github}" target="_blank" rel="noopener noreferrer" class="btn-ghost">
-                GitHub
+              <a href="${profileData.identity.links.linkedin}" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+                LinkedIn
               </a>
             </div>
           </div>
