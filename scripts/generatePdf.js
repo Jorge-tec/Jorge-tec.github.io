@@ -40,10 +40,10 @@ async function generatePdf() {
       printBackground: true,
       preferCSSPageSize: true,
       margin: {
-        top: '12mm',
-        bottom: '12mm',
-        left: '14mm',
-        right: '14mm'
+        top: '0',
+        bottom: '0',
+        left: '0',
+        right: '0'
       }
     });
 
