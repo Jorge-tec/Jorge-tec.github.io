@@ -280,7 +280,7 @@ a:focus-visible, button:focus-visible {
 .desktop-nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: clamp(12px, 1.8vw, 24px);
 }
 
 .nav-link {
@@ -332,8 +332,49 @@ a:focus-visible, button:focus-visible {
   color: var(--cyan-primary);
 }
 
+/* Language Switcher */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-highest);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+  padding: 2px 4px;
+  gap: 2px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+  color: var(--cyan-primary);
+}
+
+.lang-btn.active {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--cyan-primary);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+}
+
+.lang-divider {
+  color: var(--border-muted);
+  font-size: 11px;
+}
+
 @media (max-width: 768px) {
   .desktop-nav-links { display: none; }
+  .mobile-header-lang { display: inline-flex !important; }
   .mobile-bottom-nav { display: flex; }
   body { padding-bottom: 64px; }
 }
+
